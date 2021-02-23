@@ -1,0 +1,68 @@
+{{< default }}
+
+
+{{$ title }}{{ product.name }} • Demo simple d'une solution de vente !{{/ title }}
+
+
+{{$ body }}
+<div class="space-y-8 md:flex md:space-x-8 md:space-y-0">
+
+  {{# product }}
+  <div class="flex-1">
+    <img src="/assets/src/{{ figure }}" alt="Image {{ name }}">
+  </div>
+  <div class="flex-1 space-y-16">
+    <div class="space-y-4">
+      <h2>{{ name }}</h2>
+      <h3>{{ price }} €</h3>
+    </div>
+    <form method="post" class="space-y-4">
+      <ul class="flex space-x-4">
+
+        {{# stocks }}
+          {{# quantity }}
+          <li class="h-8 w-8 flex justify-center items-center border border-black cursor-pointer select-none size">{{ name }}</li>
+          {{/ quantity }}
+        {{/ stocks }}
+
+      </ul>
+      <input id="size" name="size" type="text" hidden>
+      {{# session.logged }}
+      <button>Ajouter</button>
+      {{/ session.logged }}
+    </form>
+  </div>
+  {{/ product }}
+
+</div>
+{{/ body }}
+
+
+{{$ scripts }}
+  {{# session.logged }}
+  <script>
+  $(() => {
+
+    $('form').submit(e => {
+
+      if ($('#size').val() === '') {
+        e.preventDefault()
+        alert('Choisir une taille')
+      }
+    })
+
+    $('.size').click(action => {
+
+      $('.size').attr('class', 'h-8 w-8 flex justify-center items-center border border-black cursor-pointer select-none size')
+      action.target.className = 'h-8 w-8 flex justify-center items-center border border-black bg-black text-white cursor-pointer select-none size'
+      $('#size').val(action.target.textContent)
+      
+    })
+
+  })
+  </script>
+  {{/ session.logged }}
+{{/ scripts }}
+
+
+{{/ default }}

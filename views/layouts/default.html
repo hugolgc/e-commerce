@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <title>{{$ title }}Hugo Commerce • Demo simple d'une solution de vente !{{/ title }}</title>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ce site est une solution de vente dans le cadre d'une démonstration créée par @hugolgc (github). Il contient un cadre essentiel au fonctionnement d'une application e-commerce. Flexible et sur-mesure, il est taillé pour être évolué pour tout type de besoin.">
+    <meta name="keywords" content="hugo commerce, site e-commerce, application de vente, solution de vente, github hugolgc, création de site c-commerce, création de site c-commerce personnalisé, vente en ligne, paiement avec stripe, développeur de site e-commerce, vendre en ligne, démonstration hugo commerce">
+    <meta name="author" content="@hugolgc (github)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hugo Commerce">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="generator" content="Genesis (v2)">
     <link rel="icon" href="/assets/src/favicon.ico" type="image/x-icon">
-    
-    <title>{{$ title }}Genesis{{/ title }}</title>
-  
-    {{$ styles }}
-    <link rel="stylesheet" href="/assets/css/master.css">
-    {{/ styles }}
-  
+    <link rel="apple-touch-icon" href="/logo-180x180.png">
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
   </head>
-  <body class="min-h-screen flex justify-center items-center {{ random }}">
+  <body class="font-mono">
+
+    <h1 class="hidden">{{$ title }}Hugo Commerce • Demo simple d'une solution de vente !{{/ title }}</h1>
+
+    <header class="border-b border-black">
+      <nav class="container mx-auto px-8 py-6 flex justify-between">
+        <a href="/">Accueil</a>
+        {{# session.logged }}
+        <div class="space-x-8">
+          <a href="/account">Panier ({{ session.purchase }})</a>
+          <a href="/logout">Déconnexion</a>
+        </div>
+        {{/ session.logged }}
+        {{^ session.logged }}
+        <a href="/login">Connexion</a>
+        {{/ session.logged }}
+      </nav>
+    </header>
+    <main class="container mx-auto p-8">
+      {{$ body }}{{/ body }}
+    </main>
     
-    <main>{{$ body }}{{/ body }}</main>
-    
-    {{$ scripts }}
     <script src="/assets/js/jquery.js"></script>
-    {{/ scripts }}
+    {{$ scripts }}{{/ scripts }}
   
   </body>
 </html>

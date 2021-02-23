@@ -1,0 +1,21 @@
+{{< blank }}
+
+
+{{$ title }}Connexion • Demo simple d'une solution de vente !{{/ title }}
+
+
+{{$ body }}
+<form method="post" class="max-w-lg px-8 space-y-8">
+  <input type="email" name="email" placeholder="Email" value="{{ email }}" maxlength="255" autofocus required class="px-4 py-2 border border-black w-full">
+  <input type="password" name="password" placeholder="********" value="{{ password }}" maxlength="255" required class="px-4 py-2 border border-black w-full">
+  <button type="submit" class="py-2 border {{# password }}border-red-500 text-red-500{{/ password }}{{^ password }}border-black{{/ password }} w-full hover:bg-black hover:border-black hover:text-white">Connexion</button>
+  <p class="text-center">
+    <a href="/">Accueil</a>
+    <span>|</span>
+    <a href="/register">Inscription</a>
+  </p>
+</form>
+{{/ body }}
+
+
+{{/ blank }}

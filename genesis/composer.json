@@ -1,5 +1,6 @@
 {
     "require": {
-        "mustache/mustache": "^2.13"
+        "mustache/mustache": "^2.13",
+        "stripe/stripe-php": "^7.74"
     }
 }

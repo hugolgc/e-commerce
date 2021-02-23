@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'f7a6639e5926560c8b74310a779ed2a7f53e563b',
+    'reference' => '59931b62096888249d3a0a44210dee51eef72196',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'f7a6639e5926560c8b74310a779ed2a7f53e563b',
+      'reference' => '59931b62096888249d3a0a44210dee51eef72196',
     ),
     'mustache/mustache' => 
     array (
@@ -51,6 +51,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'e95c5a008c23d3151d59ea72484d4f72049ab7f4',
+    ),
+    'stripe/stripe-php' => 
+    array (
+      'pretty_version' => 'v7.74.0',
+      'version' => '7.74.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e45b12ff0b47746b646f51c8249210303fb076f5',
     ),
   ),
 );
